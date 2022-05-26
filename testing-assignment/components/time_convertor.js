@@ -1,16 +1,15 @@
-const time_convertor=(mili)=>{
-    let seconds=0
-    let minutes=0
-    let hours=0
-    if(mili>=1000){
-         seconds=Math.round(mili/1000)
-    }
-    if(seconds>60){
-        minutes=Math.round(seconds/60)
-    }
-    if(minutes>60){
-        hours=Math.round(minutes/60)
-    }
+const time_convertor=(milliseconds)=>{
+    // const time_convertor=(milliseconds)=>{
+        let seconds = Math.floor(milliseconds / 1000);
+        let minutes = Math.floor(seconds / 60);
+        let hours = Math.floor(minutes / 60);
+      
+        seconds = seconds % 60;
+        minutes = minutes % 60;
+        hours=hours% 24
+    // return{second:seconds,minutes:minutes,hours:hours}
+    // }
+    
 
     return {second:seconds,minut:minutes,hour:hours}
 
